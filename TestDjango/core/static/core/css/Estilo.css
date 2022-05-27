@@ -1,0 +1,9 @@
+#rectangulo
+{
+    position: absolute;
+    background-color: wheat;
+    width: 400px;
+    height: 245px;
+    top: calc(50% - 210px);
+    left: calc(50% - 195px);
+}
