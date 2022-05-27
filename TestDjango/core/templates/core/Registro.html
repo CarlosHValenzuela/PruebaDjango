@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="pagina 4,6.css" />
     <title>Registrate</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {% load static %}
@@ -51,38 +50,44 @@
     <!--Termino NavBar-->
     <form>
         <div id="rectangulo">
-            <div class="col-6">
-                <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Registro</label>
-                <input type="text" class="form-control" id="Usuario" placeholder="Nombre de usuario">
+            <div class="container-fluid">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Registro</label>
+                            <input type="text" class="form-control" id="Usuario" placeholder="Nombre de usuario">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="inputPassword2" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="Clave" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="inputEmail4" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="Email" placeholder="Correo" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="inputAddress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="Dirección" placeholder="Calle">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-success" name="Conectar" id="Conectar">Iniciar
+                                Sesion</button>
+                        </div>
+                    </div>
+
+                    <div id="liveAlertPlaceholder" class="col-auto">
+                        <div id="alert"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="mb-3">
-                <label for="inputPassword2" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="Clave" placeholder="Contraseña" required>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="mb-3">
-                <label for="inputEmail4" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="Email" placeholder="Correo" required>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="mb-3">
-                <label for="inputAddress" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="Dirección" placeholder="Calle">
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="mb-3">
-                <button type="button" class="btn btn-success" name="Conectar" id="Conectar">Iniciar Sesion</button>
-                </div>
-            </div>
-            
-            <div id="liveAlertPlaceholder" class="col-auto">
-                <div id="alert"></div>
+
             </div>
         </div>
     </form>
