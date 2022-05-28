@@ -4,7 +4,12 @@
     margin: auto;
     padding: 20px;
     background-color: wheat;
-    top: calc(50% - 210px);
-    left: calc(50% - 195px);
-    border: 2px solid black;
+    top: 250px;
+    left: 250px;
+    border: 2px solid purple;
+    border-radius: 20px;
+}
+#body
+{
+    color: coral;
 }
