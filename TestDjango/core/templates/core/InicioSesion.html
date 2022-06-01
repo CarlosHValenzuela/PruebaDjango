@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/Estilo.css' %}">
+    <title>Inicio Sesión</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body id="body">
+    <!--Inicio NavBar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="HTML.html">Nombre Tienda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Seguimiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Descuento/Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Suscribirse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link Activate">Historial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nombre Usuario</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Termino NavBar-->
+
+
+</body>
+<div class="container-fluid">
+    <div class="row g-4">
+        <form class="form-group">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Login</label>
+                    <input type="email" class="form-control" id="email" placeholder="Correo o Usuario" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="inputPassword2" class="visually-hidden">Clave</label>
+                    <input type="password" class="form-control" id="Clave" placeholder="Clave" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div id="liveAlertPlaceholder" class="col-md-2">
+                    <div id="alert"></div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="mb-3">
+                    <button type="button" class="btn btn-success" name="Conectar" id="Conectar">Iniciar Sesion</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <ul>Si no tienes una cuenta registrate<a href="#"><button type="button"
+                                class="btn btn-secondary btn-sm"> Aqui </button></a></ul>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<script>
+    var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+    var alertTrigger = document.getElementById('Conectar');
+
+    function alert(message, type) {
+        document.getElementById("alert").innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+    }
+    $(document).ready(function () {
+        $("#Conectar").click(function () {
+            var Clave = $("#Clave").val();
+
+            if (Clave.length > 0) { //Validamos el espacio del usuario no este vacio
+                var email = $("#email").val();
+                if (email.includes("@gmail") || email.includes("@hotmail") || email.includes("@outlook")) { //Validamos que el formato del correo sea valido
+                    if (alertTrigger) {
+                        alertTrigger.addEventListener('click', function () {
+                            alert('Has ingresado correctamente los valores de tu cuenta!', 'success');
+                        })
+                    }
+                } else {
+                    if (alertTrigger) {
+                        alertTrigger.addEventListener('click', function () {
+                            alert('Formato de Correo Incorrecto', 'danger');
+                        })
+                    }
+                }
+            } else {
+                if (alertTrigger) {
+                    alertTrigger.addEventListener('click', function () {
+                        alert('Campo Usuario o Clave no puede estar vacio', 'danger');
+                    })
+                }
+            }
+        });
+    });
+</script>
+
+
+</html>
+
+
+<form>
+    <div id="rectangulo">
+
+    </div>
+</form>

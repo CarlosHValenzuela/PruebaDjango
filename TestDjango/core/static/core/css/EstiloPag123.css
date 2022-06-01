@@ -1,0 +1,27 @@
+
+#body{
+    position: absolute;
+    margin: auto;
+    background-position: center center;
+}
+
+#margen{
+    margin-top: 15px;
+}
+
+#margencentro{
+    margin-top: 30px;
+}
+
+#margencentro2{
+    margin-top: 50px;
+}
+
+#margencentro3{
+    margin-top: 80px;
+}
+
+.body2
+{
+    background-color: wheat;
+}
