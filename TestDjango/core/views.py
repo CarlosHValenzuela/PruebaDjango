@@ -23,3 +23,6 @@ def MetodoPago(request):
 
 def Suscribirte(request):
     return render(request,'core/Suscribirte.html')
+
+def PaginaPrincipal(request):
+    return render(request, 'core/PaginaPrincipal.html')
