@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('nom_Usuario', models.CharField(max_length=100, verbose_name='Nombre de usuario')),
                 ('pass_Usuario', models.CharField(max_length=50, verbose_name='PassWord de usuario')),
                 ('email_Usuario', models.CharField(max_length=100, verbose_name='Correo del usuario')),
+                ('dir_Usuario', models.CharField(max_length=100, verbose_name='Dirrecion del usuario')),
             ],
         ),
     ]

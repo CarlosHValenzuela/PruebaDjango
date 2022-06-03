@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 
 
@@ -15,8 +16,8 @@ def InicioSesion(request):
 def Carrito(request):
     return render(request,'core/Carrito.html')
 
-def Registrate(request):
-    return render(request,'core/Registrate.html')
+def FormRegistrate(request):
+    return render(request,'core/FormRegistrate.html')
 
 def MetodoPago(request):
     return render(request,'core/MetodoPago.html')

@@ -75,14 +75,18 @@
                 <input type="text" class="form-control" id="Dirección" placeholder="Calle">
             </div>
         </div>
+        <div method="post" action="" id="formulario"> 
+            {% csrf_token %}
+            <div class="form-group">
+                {{form.as_table}}
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="mb-3">
                 <button type="button" class="btn btn-success" name="Conectar" id="Conectar">Iniciar Sesion</button>
             </div>
-        </div>
-        <div id="liveAlertPlaceholder" class="col-md-2">
-            <div class="mb-6">
-                <div id="alert"></div>
+            <div class="alert alert-success" role="alert">
+                {{mensaje}}
             </div>
         </div>
     </form>
