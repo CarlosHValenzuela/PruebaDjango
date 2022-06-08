@@ -50,89 +50,57 @@
         </div>
     </nav>
     <!--Termino NavBar-->
-    <form>
-        <div class="col-md-6">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Registro</label>
-                <input type="text" class="form-control" id="Usuario" placeholder="Nombre de usuario">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="mb-3">
-                <label for="inputPassword2">Contraseña</label>
-                <input type="password" class="form-control" id="Clave" placeholder="Contraseña" required>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="mb-3">
-                <label for="inputEmail4" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="Email" placeholder="Correo" required>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="mb-3">
-                <label for="inputAddress" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="Dirección" placeholder="Calle">
-            </div>
-        </div>
-        <div method="post" action="" id="formulario"> 
+    <div class="row">
+        <h1>Iniciar Sesion</h1>
+    </div>
+    <div class="row">
+        <form method="POST" action="" id="formulario">
             {% csrf_token %}
             <div class="form-group">
                 {{form.as_table}}
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="mb-3">
-                <button type="button" class="btn btn-success" name="Conectar" id="Conectar">Iniciar Sesion</button>
-            </div>
-            <div class="alert alert-success" role="alert">
+            <input type="button" class="btn btn-primary" value="Iniciar" id="validar">
+            <input type="reset" class="btn btn-warning" value="Limpiar">
+
+            <div class="alert alert-success">
                 {{mensaje}}
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 
 </body>
 
 <script>
     var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-    var alertTrigger = document.getElementById('Conectar');
+    var alertTrigger = document.getElementById('validar');
 
     function alert(message, type) {
         document.getElementById("alert").innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
     }
     $(document).ready(function () {
-        $("#Conectar").click(function () {
-            var Usuario = $("#Usuario").val();
+        $("#validar").click(function () {
+            var Usuario = $("#id_nom_Usuario").val();
 
             if (Usuario.length > 0) { //Validamos que el espacio del Usuario no este vacio
-                var Clave = $("#Clave").val();
+                var Clave = $("#id_pass_Usuario").val();
                 if (Clave.length > 0) { //Validamos que el espacio del Clave no este vacio
-                    var Email = $("#Email").val();
+                    var Email = $("#id_email_Usuario").val();
                     if (Email.includes("@gmail") || Email.includes("@hotmail") || Email.includes("@outlook")) { //Validamos que el formato del correo no este vacio
                         if (alertTrigger) {
-                            alertTrigger.addEventListener('click', function () {
-                                alert('Has ingresado correctamente los valores de tu cuenta!', 'success');
-                            })
+                            alert('Has ingresado correctamente los valores de tu cuenta!', 'success');
+                            $("#formulario").submit();
                         }
                     } else {
-                        if (alertTrigger) {
-                            alertTrigger.addEventListener('click', function () {
-                                alert('Formato de Correo Incorrecto', 'danger');
-                            })
-                        }
+                        alert('Formato de Correo Incorrecto', 'danger');
                     }
                 } else {
                     if (alertTrigger) {
-                        alertTrigger.addEventListener('click', function () {
-                            alert('La Clave no puede estar vacia', 'danger');
-                        })
+                        alert('La Clave no puede estar vacia', 'danger');
                     }
                 }
             } else {
                 if (alertTrigger) {
-                    alertTrigger.addEventListener('click', function () {
-                        alert('Usuario Vacio', 'danger');
-                    })
+                    alert('Usuario Vacio', 'danger');
                 }
             }
         });
