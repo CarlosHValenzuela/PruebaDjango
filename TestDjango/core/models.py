@@ -1,3 +1,4 @@
+from unicodedata import numeric
 from django.db import models
 
 # Create your models here.
@@ -20,3 +21,21 @@ class Carrito(models.Model):
 
     def __str__(self):
         return self.dir_Carrito
+
+class Pedidos(models.Model):
+    idProducto =models.IntegerField(primary_key=True, verbose_name='Id del producto')
+    direccion =models.CharField(max_length=150,verbose_name='Direccion del producto')
+    diasTranscurridos =models.IntegerField(max_length=6, verbose_name='Dias transcurridos')
+    nombreProducto =models.CharField(max_length=150,verbose_name='Nombre del producto')
+    nom_Usuario =models.CharField(max_length=100, verbose_name='Nombre de usuario')
+    precioProducto =models.IntegerField(max_length=6, verbose_name='Precio del producto')
+    cantidadProducto =models.IntegerField(max_length=6, verbose_name='Cantidad')
+    def __str__(self):
+        return self.nombreProducto
+
+class metodoPago(models.Model):
+    nombreTitular =models.CharField(max_length=150,verbose_name='Nombre del titular')
+    numeroTarjeta =models.IntegerField(max_length=6,verbose_name='Numero de la tareta')
+    
+    def __str__(self):
+        return self.debito

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import ClienteForm,CarritoForm
-from .models import Cliente,Carrito
+from .models import Cliente,Carrito,metodoPago,Pedidos
 
 # Create your views here.
 
@@ -9,7 +9,11 @@ def Registro(request):
     return render(request,'core/Registro.html')
 
 def Pedido(request):
-    return render(request,'core/Pedido.html')
+    pedidos= Pedidos.objects.all()
+    datos = {
+        'pedidos': pedidos
+    }
+    return render(request,'core/Pedido.html', datos)
 
 def InicioSesion(request):
     return render(request,'core/InicioSesion.html')
@@ -45,6 +49,7 @@ def Suscribirte(request):
     return render(request,'core/Suscribirte.html')
 
 def PaginaPrincipal(request):
+
     return render(request, 'core/PaginaPrincipal.html')
 
 def Usuario(request):
