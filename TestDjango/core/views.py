@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .forms import ClienteForm
-from .models import Cliente
+from .forms import ClienteForm,CarritoForm
+from .models import Cliente,Carrito
 
 # Create your views here.
 
@@ -14,8 +14,17 @@ def Pedido(request):
 def InicioSesion(request):
     return render(request,'core/InicioSesion.html')
 
-def Carrito(request):
-    return render(request,'core/Carrito.html')
+def FormCarrito(request):
+    datos = {
+        'form':CarritoForm()
+    }
+    if request.method=='POST':
+        formulario = CarritoForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardados Correctamente"
+
+    return render(request,'core/FormCarrito.html',datos)
 
 def FormRegistrate(request):
     datos = {

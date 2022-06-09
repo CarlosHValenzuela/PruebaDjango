@@ -12,3 +12,11 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nom_Usuario
+
+
+class Carrito(models.Model):
+    dir_Carrito =models.CharField(max_length=150,verbose_name='Dirrecion del Carrito')
+    precio_Carrito =models.CharField(max_length=100, verbose_name='Precio del Carrito')
+
+    def __str__(self):
+        return self.dir_Carrito
