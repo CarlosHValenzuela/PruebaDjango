@@ -1,27 +1,10 @@
 
-#body{
-    position: absolute;
-    margin: auto;
-    background-position: center center;
-}
-
-#margen{
-    margin-top: 15px;
-}
-
-#margencentro{
-    margin-top: 30px;
-}
-
-#margencentro2{
-    margin-top: 50px;
-}
-
-#margencentro3{
-    margin-top: 80px;
-}
-
-.body2
-{
+#cuerpo{
     background-color: wheat;
+}
+#formulario
+{
+    margin: 1em;
+    border-style: solid;
+    border-width: 2px;
 }

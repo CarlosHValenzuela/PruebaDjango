@@ -37,3 +37,6 @@ def Suscribirte(request):
 
 def PaginaPrincipal(request):
     return render(request, 'core/PaginaPrincipal.html')
+
+def Usuario(request):
+    return render (request, 'core/Usuario.html')
