@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .forms import ClienteForm,CarritoForm
-from .models import Cliente,Carrito,metodoPago,Pedidos
+from .forms import *
+from .models import *
 
 # Create your views here.
 
@@ -38,12 +38,23 @@ def FormRegistrate(request):
         formulario = ClienteForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje'] = "Guardados Correctamente";
+            datos['mensaje'] = "Guardados Correctamente"
 
     return render(request,'core/FormRegistrate.html',datos)
 
 def MetodoPago(request):
-    return render(request,'core/MetodoPago.html')
+
+    datos = {
+        'form':MetodoPagoForm()
+    }
+
+    if request.method=='POST':
+        formulario = MetodoPagoForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardados Correctamente"
+
+    return render(request,'core/MetodoPago.html',datos)
 
 def Suscribirte(request):
     return render(request,'core/Suscribirte.html')
@@ -53,4 +64,8 @@ def PaginaPrincipal(request):
     return render(request, 'core/PaginaPrincipal.html')
 
 def Usuario(request):
-    return render (request, 'core/Usuario.html')
+    usuario = Cliente.objects.all()
+    datos = {
+        'usuario' : usuario
+    }
+    return render (request, 'core/Usuario.html',datos)

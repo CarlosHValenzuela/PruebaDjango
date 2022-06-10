@@ -1,7 +1,7 @@
 from dataclasses import field
 from django import forms
 from django.forms import ModelForm
-from .models import Cliente,Carrito,Pedidos
+from .models import Cliente,Carrito,Pedidos,MetodoPago
 
 class ClienteForm(ModelForm):
 
@@ -18,3 +18,8 @@ class Pedidos(ModelForm):
     class Meta:
         model = Pedidos
         fields = ['idProducto','direccion','diasTranscurridos','nombreProducto','nom_Usuario','precioProducto','cantidadProducto']
+
+class MetodoPagoForm(ModelForm):
+    class Meta:
+        model = MetodoPago
+        fields = ['nombreTitular','numeroTarjeta','ccvTarjeta','fecha_ven']

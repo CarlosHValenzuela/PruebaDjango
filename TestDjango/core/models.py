@@ -33,9 +33,11 @@ class Pedidos(models.Model):
     def __str__(self):
         return self.nombreProducto
 
-class metodoPago(models.Model):
+class MetodoPago(models.Model):
     nombreTitular =models.CharField(max_length=150,verbose_name='Nombre del titular')
-    numeroTarjeta =models.IntegerField(max_length=6,verbose_name='Numero de la tareta')
+    numeroTarjeta =models.IntegerField(primary_key=True,max_length=6,verbose_name='Numero de la tarjeta')
+    ccvTarjeta =models.IntegerField(max_length=6,verbose_name='Ccv de la tarjeta')
+    fecha_ven =models.IntegerField(max_length=6,verbose_name='Fecha de vencimiento de la tarjeta')
     
     def __str__(self):
-        return self.debito
+        return self.nombreTitular
