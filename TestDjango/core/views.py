@@ -19,7 +19,9 @@ def InicioSesion(request):
     return render(request,'core/InicioSesion.html')
 
 def FormCarrito(request):
+    carro = Carrito.objects.all()
     datos = {
+        'carrito' = carro,
         'form':CarritoForm()
     }
     if request.method=='POST':
