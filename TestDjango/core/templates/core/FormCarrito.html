@@ -48,31 +48,40 @@
         </div>
     </nav>
     <!--Termino NavBar-->
-        <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h1 id="titulo1">Carrito</h1>
+    <div class="row">
+        <form method="POST" action="" id="carrito">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_table}}
             </div>
-            <div class="row">
-                <form method="POST" action="" id="formulario">
-                    {% csrf_token %}
-                    <div class="col-md-4">
-                            {{form.as_table}}
-                    </div>
-                    <input type="submit" class="btn btn-primary" value="Guardar" id="validar">
-                    <input type="reset" class="btn btn-warning" value="Limpiar">
-
-                    <a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Volver a la pagina principal</button></a>
-
-                    <div class="alert alert-success">
-                        {{mensaje}}
-                    </div>
-                </form>
-            </div>
-
-            </div>
+            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+            
+        </form>
+        <div class="alert alert-success">
+            {{mensaje}}
         </div>
-        
+    </div>
+    <div class="row">
+        <h1>Carrito</h1>
+    </div>
+    <div class="row">
+        <table class="table table-dark table-hover table-responsive" id="tabla2">
+            <tr>
+                <td>Id</td>
+                <td>Nombre del producto</td>
+                <td>Precio</td>
+                <td>Cantidad</td>
+            </tr>
+            {% for ca in carro %}
+            <tr>
+                <td>{{ca.idProducto}}</td>
+                <td>{{ca.nombreProducto}}</td>
+                <td>{{ca.precioProducto}}</td>
+                <td>{{ca.cantidadProducto}}</td>
+                <td><a href="{% url 'FormCarrito' ca.nombreProducto %}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

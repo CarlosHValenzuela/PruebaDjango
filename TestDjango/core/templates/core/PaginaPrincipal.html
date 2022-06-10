@@ -86,13 +86,13 @@
                             <div class="col-sm-6">
                                 <ul>
                                     <li>
-                                        <label>Nombre Producto</label>
+                                        <label>Juguete para mascotas</label>
                                     </li>
                                     <li>
-                                        <label>Precio: </label>
+                                        <label>Precio: 4990</label>
                                     </li>
                                     <li>
-                                        <label>Stock: </label>
+                                        <label>Stock: 100</label>
                                     </li>
                                 </ul>
                             </div>
@@ -100,8 +100,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
+                        <a href="{% url 'Form_Carrito' %}">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -122,13 +121,13 @@
                             <div class="col-sm-6">
                                 <ul>
                                     <li>
-                                        <label>Nombre Producto</label>
+                                        <label>Collar para gatos</label>
                                     </li>
                                     <li>
-                                        <label>Precio: </label>
+                                        <label>Precio: 2990</label>
                                     </li>
                                     <li>
-                                        <label>Stock: </label>
+                                        <label>Stock: 50</label>
                                     </li>
                                 </ul>
                             </div>
@@ -136,8 +135,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
+                        <a href="{% url 'Form_Carrito' %}">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -158,13 +156,13 @@
                             <div class="col-sm-6">
                                 <ul>
                                     <li>
-                                        <label>Nombre Producto</label>
+                                        <label>Galleta premio</label>
                                     </li>
                                     <li>
-                                        <label>Precio: </label>
+                                        <label>Precio: 9990</label>
                                     </li>
                                     <li>
-                                        <label>Stock: </label>
+                                        <label>Stock: 50</label>
                                     </li>
                                 </ul>
                             </div>
@@ -172,487 +170,13 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
+                        <a href="{% url 'Form_Carrito' %}">Comprar</a>
                     </div>
                 </div>
             </div>
         </div>
         <!--fin Modal Primera Linea-->
-        <!--Modal Respuesta-->
-        <div class="modal fade" id="respuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="" class="img-fluid rounded-start">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Inicio Productos Primera Linea-->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalPerrito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!--Imagen Modal 2 -->
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalGatito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!--Imagen Modal 3 -->
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalGatito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!-- Inicio Modal 1-->
-        <div class="modal fade" id="ModalPerrito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Inicio Modal 2-->
-        <div class="modal fade" id="ModalGatito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nombre del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Inicio Modal 3-->
-        <div class="modal fade" id="ModalGatito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nombre del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--fin Modal Segunda Linea-->
-        <!--Modal Respuesta-->
-        <div class="modal fade" id="respuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="" class="img-fluid rounded-start">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Inicio Productos Tercera Linea-->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro2">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalPerrito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!--Imagen Modal 2 -->
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro2">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalGatito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!--Imagen Modal 3 -->
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro2">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalGatito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!-- Inicio Modal 1-->
-        <div class="modal fade" id="ModalPerrito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Inicio Modal 2-->
-        <div class="modal fade" id="ModalGatito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nombre del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Inicio Modal 3-->
-        <div class="modal fade" id="ModalGatito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nombre del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--fin Modal Tercera Linea-->
-        <!--Modal Respuesta-->
-        <div class="modal fade" id="respuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="" class="img-fluid rounded-start">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Inicio Productos Cuarta Linea-->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro3">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalPerrito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!--Imagen Modal 2 -->
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro3">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalGatito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-               
-            </div>
-        </div>
-        <!--Imagen Modal 3 -->
-        <div class="col-lg-4">
-            <div class="card h-100 w-50" id="margencentro3">
-                <img src="Imagenes/producto.webp" data-bs-toggle="modal" data-bs-target="#ModalGatito1"
-                    class="card-img-top rounded-start" alt="..." style="width: auto; height: auto;">
-                
-            </div>
-        </div>
-        <!-- Inicio Modal 1-->
-        <div class="modal fade" id="ModalPerrito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Inicio Modal 2-->
-        <div class="modal fade" id="ModalGatito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nombre del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Inicio Modal 3-->
-        <div class="modal fade" id="ModalGatito1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nombre del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="Imagenes/producto.webp" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-sm-6">
-                                <ul>
-                                    <li>
-                                        <label>Nombre Producto</label>
-                                    </li>
-                                    <li>
-                                        <label>Precio: </label>
-                                    </li>
-                                    <li>
-                                        <label>Stock: </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#respuesta">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--fin Modal Cuarta Linea-->
-        <!--Modal Respuesta-->
-        <div class="modal fade" id="respuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="" class="img-fluid rounded-start">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div>    
 
     
 

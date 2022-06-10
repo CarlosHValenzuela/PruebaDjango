@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from .forms import ClienteForm,CarritoForm
-from .models import Cliente,Carrito,metodoPago,Pedidos
+from django.shortcuts import render, redirect
+from .forms import *
+from .models import *
 
 # Create your views here.
 
@@ -19,14 +19,17 @@ def InicioSesion(request):
     return render(request,'core/InicioSesion.html')
 
 def FormCarrito(request):
+    carro = Carrito.objects.all()
     datos = {
-        'form':CarritoForm()
+        'carrito': carro,
+        'form': CarritoForm()
     }
+
     if request.method=='POST':
         formulario = CarritoForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje'] = "Guardados Correctamente"
+            datos['mensaje'] = "Producto agregado con exito al carrito"
 
     return render(request,'core/FormCarrito.html',datos)
 
@@ -54,3 +57,8 @@ def PaginaPrincipal(request):
 
 def Usuario(request):
     return render (request, 'core/Usuario.html')
+
+def form_del_Carrito(request, id):
+    carrito = CarritoForm.objects.get(idProducto=id)
+    carrito.delete()
+    return redirect(to="Form_Carrito")

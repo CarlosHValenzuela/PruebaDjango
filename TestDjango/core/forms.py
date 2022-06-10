@@ -12,7 +12,7 @@ class ClienteForm(ModelForm):
 class CarritoForm(ModelForm):
     class Meta:
         model = Carrito
-        fields = ['dir_Carrito','precio_Carrito']
+        fields = ['nombreProducto','precioProducto','cantidadProducto']
 
 class Pedidos(ModelForm):
     class Meta:

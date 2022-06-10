@@ -16,8 +16,10 @@ class Cliente(models.Model):
 
 
 class Carrito(models.Model):
-    dir_Carrito =models.CharField(max_length=150,verbose_name='Dirrecion del Carrito')
-    precio_Carrito =models.CharField(max_length=100, verbose_name='Precio del Carrito')
+    idProducto =models.IntegerField(primary_key=True, verbose_name='Id del producto')
+    nombreProducto =models.CharField(max_length=150,verbose_name='Nombre del producto')
+    precioProducto =models.IntegerField(max_length=6, verbose_name='Precio del producto')
+    cantidadProducto =models.IntegerField(max_length=6, verbose_name='Cantidad')
 
     def __str__(self):
         return self.dir_Carrito
