@@ -21,13 +21,8 @@ def InicioSesion(request):
 def FormCarrito(request):
     carro = Carrito.objects.all()
     datos = {
-<<<<<<< HEAD
         'carrito': carro,
         'form': CarritoForm()
-=======
-        'carrito' = carro,
-        'form':CarritoForm()
->>>>>>> 2ad18314581f118042fc8181b71d9492c30d017b
     }
 
     if request.method=='POST':
@@ -72,17 +67,9 @@ def PaginaPrincipal(request):
     return render(request, 'core/PaginaPrincipal.html')
 
 def Usuario(request):
-<<<<<<< HEAD
     return render (request, 'core/Usuario.html')
 
 def form_del_Carrito(request, id):
     carrito = CarritoForm.objects.get(idProducto=id)
     carrito.delete()
     return redirect(to="Form_Carrito")
-=======
-    usuario = Cliente.objects.all()
-    datos = {
-        'usuario' : usuario
-    }
-    return render (request, 'core/Usuario.html',datos)
->>>>>>> 652fff0bed3c336d51d253ddcbe2a48da7a59e13

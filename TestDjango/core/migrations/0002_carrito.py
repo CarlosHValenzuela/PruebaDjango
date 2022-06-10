@@ -14,8 +14,9 @@ class Migration(migrations.Migration):
             name='Carrito',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('dir_Carrito', models.CharField(max_length=150, verbose_name='Dirrecion del Carrito')),
-                ('precio_Carrito', models.CharField(max_length=100, verbose_name='Precio del Carrito')),
+                ('nombreProducto', models.CharField(max_length=150,verbose_name='Nombre del producto')),
+                ('precioProducto', models.CharField(max_length=6, verbose_name='Precio del producto')),
+                ('cantidadProducto', models.CharField(max_length=6, verbose_name='Cantidad')),
             ],
         ),
     ]

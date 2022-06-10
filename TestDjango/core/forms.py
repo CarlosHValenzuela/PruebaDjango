@@ -1,7 +1,7 @@
 from dataclasses import field
 from django import forms
 from django.forms import ModelForm
-from .models import Cliente,Carrito,Pedidos,MetodoPago
+from .models import *
 
 class ClienteForm(ModelForm):
 
