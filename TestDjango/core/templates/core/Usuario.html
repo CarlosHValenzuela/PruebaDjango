@@ -48,3 +48,34 @@
             </div>
         </div>
     </nav>
+    <div class="container-fluid">
+        <div >
+            <div>
+                <h1>Datos del Usuario</h1>
+                <br>
+                <table class="table table-dark table-hover table-responsive" id="tabla1">
+                    <thead>
+                        
+                        <tr>
+                            <th>Id del Cliente</th>
+                            <th>Nombre Usuario</th>
+                            <th>Contraseña del Usuario </th>
+                            <th>Correo del Usuario</th>
+                            <th>Direccion del usuario</th>
+                        </tr>
+                        {% for Cl in usuario %}
+                        <tr>
+                            <th>{{Cl.id_Cliente}}</th>
+                            <th>{{Cl.nom_Usuario}}</th>
+                            <th>{{Cl.pass_Usuario}}</th>
+                            <th>{{Cl.email_Usuario}}</th>
+                            <th>{{Cl.dir_usuario}}</th>
+                        </tr>
+                        {% endfor %}
+                    </thead>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

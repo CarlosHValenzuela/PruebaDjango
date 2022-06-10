@@ -41,12 +41,23 @@ def FormRegistrate(request):
         formulario = ClienteForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje'] = "Guardados Correctamente";
+            datos['mensaje'] = "Guardados Correctamente"
 
     return render(request,'core/FormRegistrate.html',datos)
 
 def MetodoPago(request):
-    return render(request,'core/MetodoPago.html')
+
+    datos = {
+        'form':MetodoPagoForm()
+    }
+
+    if request.method=='POST':
+        formulario = MetodoPagoForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardados Correctamente"
+
+    return render(request,'core/MetodoPago.html',datos)
 
 def Suscribirte(request):
     return render(request,'core/Suscribirte.html')
@@ -56,9 +67,17 @@ def PaginaPrincipal(request):
     return render(request, 'core/PaginaPrincipal.html')
 
 def Usuario(request):
+<<<<<<< HEAD
     return render (request, 'core/Usuario.html')
 
 def form_del_Carrito(request, id):
     carrito = CarritoForm.objects.get(idProducto=id)
     carrito.delete()
     return redirect(to="Form_Carrito")
+=======
+    usuario = Cliente.objects.all()
+    datos = {
+        'usuario' : usuario
+    }
+    return render (request, 'core/Usuario.html',datos)
+>>>>>>> 652fff0bed3c336d51d253ddcbe2a48da7a59e13

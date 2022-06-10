@@ -10,6 +10,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/EstiloPag123.css' %}">
     <title>Metodo de pago</title>
     <script src="JS/script.js"></script>
 
@@ -53,117 +55,23 @@
         Metodos de pago
     </h1>
     <div class="container-fluid">
-        <div class="row g-4">
-            <form class="form-group">
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre Titular</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default" placeholder="Ingrese Nombre del titular"
-                            id="Nombre_titular">
+                <form method="POST" action="" id="formulario">
+                    {% csrf_token %}
+                    <div class="col-md-4">
+                            {{form.as_table}}
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Numero Tarjeta</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default" placeholder="Ingrese el numero de Tarjeta"
-                            id="Numero_Tarjeta">
-                    </div>
-                </div>
-                <div class="col-mb-2">
-                    <div class="mb-2">
-                        <span class="input-group-text" id="inputGroup-sizing-default">CVV</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default" id="cvv">
-                    </div>
-                </div>
+                    <input type="submit" class="btn btn-primary" value="Guardar" id="validar">
+                    <input type="reset" class="btn btn-warning" value="Limpiar">
 
-                <div class="col-mb-6">
-                    <div class="mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Fecha Vencimiento</span>
-                        <input type="number" class="form-control" placeholder="Mes" aria-label="Mes" id="Mes">
-                        <span class="input-group-text">/</span>
-                        <input type="number" class="form-control" placeholder="Año" aria-label="Año" id="Año">
+                    <a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Volver a la Pagina Principal</button></a>
+
+                    <div class="alert alert-success">
+                        {{mensaje}}
                     </div>
-                </div>
-                <div id="liveAlertPlaceholder" class="col-mb-2">
-                    <div class="mb-4">
-                        <div id="alert"></div>
-                    </div>
-                </div>
-                <div id="button">
-
-                    <button type="button" class="btn btn-primary" id="Suscribirse">Suscribirte</button>
-
-                </div>
-
-            </form>
-        </div>
+                </form>
     </div>
 
-    <script>
-        var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-        var alertTrigger = document.getElementById('Suscribirse');
 
-        function alert(message, type) {
-            document.getElementById("alert").innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-        }
-
-        $(document).ready(function () {
-            $("#Suscribirse").click(function () {
-                var Nombre_titular = $("#Nombre_titular").val();
-
-                if (Nombre_titular.length > 0) {
-                    var Numero_Tarjeta = $("#Numero_Tarjeta").val();
-                    if (Numero_Tarjeta.length > 0) {
-                        var Mes = $('#Mes').val();
-                        if (Mes.length > 0) {
-                            var ano = $('#Año').val();
-                            if (ano.length > 0) {
-                                var cvv = $('#cvv').val();
-                                if (cvv.length > 0) {
-                                    alertTrigger.addEventListener('click', function () {
-                                        alert('Datos ingresados correctamente', 'success')
-                                    })
-                                } else {
-                                    if (alertTrigger) {
-                                        alertTrigger.addEventListener('click', function () {
-                                            alert('El Cvv no puede estar vacio!', 'danger');
-                                        })
-                                    }
-                                }
-                            } else {
-                                if (alertTrigger) {
-                                    alertTrigger.addEventListener('click', function () {
-                                        alert('El ano no puede estar vacio!', 'danger');
-                                    })
-                                }
-                            }
-                        } else {
-                            if (alertTrigger) {
-                                alertTrigger.addEventListener('click', function () {
-                                    alert('El mes no puede estar vacio!', 'danger');
-                                })
-                            }
-                        }
-                    } else {
-                        if (alertTrigger) {
-                            alertTrigger.addEventListener('click', function () {
-                                alert('El numero de tarjeta no puede estar vacio', 'danger');
-                            })
-                        }
-                    }
-                } else {
-                    if (alertTrigger) {
-                        alertTrigger.addEventListener('click', function () {
-                            alert('El nombre no puede estar vacio', 'danger');
-                        })
-                    }
-                }
-            });
-        });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

@@ -11,14 +11,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='metodoPago',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('debito', models.CharField(max_length=150, verbose_name='Debito')),
-                ('credito', models.CharField(max_length=150, verbose_name='Credito')),
-            ],
-        ),
-        migrations.CreateModel(
             name='Pedidos',
             fields=[
                 ('idProducto', models.IntegerField(primary_key=True, serialize=False, verbose_name='Id del producto')),
