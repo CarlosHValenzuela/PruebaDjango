@@ -21,8 +21,13 @@ def InicioSesion(request):
 def FormCarrito(request):
     carro = Carrito.objects.all()
     datos = {
+<<<<<<< HEAD
         'carrito': carro,
         'form': CarritoForm()
+=======
+        'carrito' = carro,
+        'form':CarritoForm()
+>>>>>>> 2ad18314581f118042fc8181b71d9492c30d017b
     }
 
     if request.method=='POST':
